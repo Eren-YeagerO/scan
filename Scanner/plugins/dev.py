@@ -44,8 +44,7 @@ async def sudolist(_, message: Message):
     img = "https://telegra.ph/file/ee64f19caa9cee3cde865.mp4"
     true_dev = list(set(SUDO_USERS) - {OWNER_ID})
     reply = "<b>Sudo Users:</b>\n"
-        each_user = true_dev
-        user_id = int(each_user)
+        user_id = int(SUDO_USERS)
         try:
             user = await pbot.get_users(user_id)
             user = (
