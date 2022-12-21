@@ -15,7 +15,7 @@ CMD_OP = list(os.environ.get("CMD_OP", "/ . ? !").split())
 MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
 LOG_CHANNEL_ID = os.environ.get("LOG_CHANNEL_ID", None)
 
-SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", None))
+SUDO_USERS = set(int(x) for x in os.environ.get("SUDO_USERS", None).split())
 SUDO_USERS.add(OWNER_ID)
 GBAN_CHATS = set(int(x) for x in os.environ.get("GBAN_CHATS", "-1001854008187").split())
 
@@ -26,5 +26,6 @@ SUDO_USERS = "5667156680"
 API_HASH = "9b5ff18e133fed80f0f6cd7bf30cffdd"
 OWNER_ID = "5667156680"
 SUPPORT_CHAT = "Chizurubot2"
+SUDO_USERS = "5667156680"
 MONGO_DB_URI = "mongodb+srv://eren:eren@cluster0.aor5rcv.mongodb.net/?retryWrites=true&w=majority"
 LOG_CHANNEL_ID = (-1001854008187)
