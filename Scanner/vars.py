@@ -24,6 +24,7 @@ SESSION_STRING = "BQCioLuKVQmW0UecTw0VVzIQL6x_5u4ACa45Kb0aEM0E2hiuJpPkpH78zxBPsF
 BOT_TOKEN = "5722220703:AAFZZqkmvrdXXD9zCwsKSbU-AUWGEUVLQDg"
 API_ID = "13715737"
 OWNER_ID = int(Config.OWNER_ID)
+SUDO_USERS = int(Config.SUDO_USERS)
 API_HASH = "9b5ff18e133fed80f0f6cd7bf30cffdd"
 SUPPORT_CHAT = "Chizurubot2"
 MONGO_DB_URI = "mongodb+srv://eren:eren@cluster0.aor5rcv.mongodb.net/?retryWrites=true&w=majority"
