@@ -1,5 +1,7 @@
 import os
 
+from Scanner.config import Development as Config
+
 que = {}
 admins = {}
 
