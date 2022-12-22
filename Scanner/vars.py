@@ -25,6 +25,5 @@ API_ID = "13715737"
 API_HASH = "9b5ff18e133fed80f0f6cd7bf30cffdd"
 OWNER_ID = "5667156680"
 SUPPORT_CHAT = "Chizurubot2"
-SUDO_USERS = "5667156680"
 MONGO_DB_URI = "mongodb+srv://eren:eren@cluster0.aor5rcv.mongodb.net/?retryWrites=true&w=majority"
 LOG_CHANNEL_ID = (-1001854008187)
