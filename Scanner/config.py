@@ -1,5 +1,5 @@
 class Config(object):
-SUDO_USERS = 
+SUDO_USERS = "5667156680"
 OWNER_ID = 5667156680
 
 class Production(Config):
