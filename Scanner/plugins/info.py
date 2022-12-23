@@ -17,7 +17,7 @@ def extract_gban(message):
 
 async def get_user_info(user, already=False):
     if not already:
-        user = await Client.get_users(user)
+        user = await Client.get_user(user)
     if not user.first_name:
         return ["Deleted account", None]
     user_id = user.id
