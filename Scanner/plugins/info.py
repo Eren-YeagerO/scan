@@ -1,5 +1,6 @@
 from pyrogram.types import Message
 from pyrogram import filters
+from Scanner.db import global_bans_db as db
 from Scanner import pbot as app
 from pyrogram.enums.parse_mode import ParseMode
 
