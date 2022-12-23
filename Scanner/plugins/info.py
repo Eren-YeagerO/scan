@@ -3,7 +3,7 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
-from Scanner import ubot as app
+from Scanner import pbot as app
 from Scanner.vars import SUDO_USERS
 from Scanner.db import global_bans_db as db
 
