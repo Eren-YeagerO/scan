@@ -38,7 +38,8 @@ I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the sa
                 ],
                 [
                     InlineKeyboardButton(
-                        "Guide📓", TEMST),
+                        "Guide📓", TEMST)
+                ],
            ]
         ),
     )
