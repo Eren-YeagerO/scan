@@ -1,5 +1,6 @@
 from pyrogram.types import Message
 from pyrogram import filters
+from Scanner.db import global_bans_db as db
 from Scanner import pbot as app
 from pyrogram.enums.parse_mode import ParseMode
 
@@ -25,7 +26,8 @@ async def info(_,msg:Message):
         user = msg.text.split(None, 1)[1]
         
     x = await app.get_users(user)
-    z = """User id : <code>{}</code> \nName : {} \nDC id : <code>{}</code>\nPermanent Link : <a href='tg://user?id={}'>{}</a>""".format(x.id,x.first_name,x.dc_id,x.id,x.first_name)
+    is_gbanned = await db.get_gbanned_user(user_id)
+    z = """User id : <code>{}</code> \nName : {} \nDC id : <code>{}</code> \nGlobally Punished : {}\nPermanent Link : <a href='tg://user?id={}'>{}</a>""".format(x.id,x.first_name,x.dc_id,x.id,db.is_user_gbanned(user_id),x.first_name)
     file = x.photo.big_file_id if x.photo else None
     photo = await app.download_media(file)
     await m.delete()
