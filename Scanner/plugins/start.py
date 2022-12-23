@@ -24,9 +24,9 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""ᴡᴇʟᴄᴏᴍᴇ : {message.from_user.mention()}
 
-I am a scanner, use me to gban user in muiltiple bots at the same time.
+I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the same time.
 
-Usage:
+Usage: 
     /start
     /scan -id (id) -r (reason)  -p (proof link)
     /revert -id (id)
@@ -40,9 +40,9 @@ Usage:
             [
                 [
                     InlineKeyboardButton(
-                        "🆘 ʜᴇʟᴘ", url=f"https://t.me/{SUPPORT_CHAT}"),
+                        "👹Help👹", url=f"https://t.me/{SUPPORT_CHAT}"),
                     InlineKeyboardButton(
-                        "✚ ᴄʟɪᴄᴋ ʜᴇʀᴇ ᴛᴏ ᴀᴅᴅ ᴍᴇ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],
            ]
         ),
