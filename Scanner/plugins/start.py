@@ -19,22 +19,14 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
+TEMST = 
+
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""ᴡᴇʟᴄᴏᴍᴇ : {message.from_user.mention()}
 
 I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the same time.
-
-Usage: 
-    /start
-    /scan -id (id) -r (reason)  -p (proof link)
-    /revert -id (id)
-    /gscan (reason)
-    /grevert
-    /stats
-    /ping
-    /sudos
 """,
     reply_markup=InlineKeyboardMarkup(
             [
@@ -42,8 +34,11 @@ Usage:
                     InlineKeyboardButton(
                         "👹Help👹", url=f"https://t.me/{SUPPORT_CHAT}"),
                     InlineKeyboardButton(
-                        "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
                 ],
+                [
+                    InlineKeyboardButton(
+                        "Guide📓", TEMST),
            ]
         ),
     )
