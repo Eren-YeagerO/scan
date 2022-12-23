@@ -7,7 +7,7 @@ from datetime import datetime
 
 from Scanner.utils.filters import command
 from Scanner.vars import SUPPORT_CHAT
-from Scanner import BOT_USERNAME, starttime
+from Scanner import BOT_USERNAME, starttime, pbot as app
 
 START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
@@ -19,7 +19,7 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
-async def _cb(c: Scanner, cb: CallbackQuery):
+async def _cb(c: pbot, cb: CallbackQuery):
     query = cb.data
     if query=='about_':
         msg_id = cb.message.id
