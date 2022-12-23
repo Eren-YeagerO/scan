@@ -19,7 +19,7 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
-async def _cb(c: app, cb: CallbackQuery):
+async def _cb(c: Scanner, cb: CallbackQuery):
     query = cb.data
     if query=='about_':
         msg_id = cb.message.id
