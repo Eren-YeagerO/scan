@@ -5,6 +5,40 @@ from pyrogram.types import Message
 
 from Scanner import ubot as app
 from Scanner.vars import SUDO_USERS
+from Scanner.db import global_bans_db as db
+
+def extract_gban(message):
+    hmmm = message.split("-id")[1]
+    hmm = hmmm.split("-r")  
+    id = int(hmm[0].split()[0].strip())
+    reason = hmm[1].split("-p")[0].strip()
+    proof = hmm[1].split("-p")[1].strip()
+    return id, reason, proof
+
+async def get_user_info(user, already=False):
+    if not already:
+        user = await app.get_users(user)
+    if not user.first_name:
+        return ["Deleted account", None]
+    user_id = user.id
+    username = user.username
+    first_name = user.first_name
+    mention = user.mention("Link")
+    dc_id = user.dc_id
+    photo_id = user.photo.big_file_id if user.photo else None
+    is_gbanned = await is_gbanned_user(user_id)
+    is_sudo = user_id in SUDOERS
+    body = {
+        "ID": user_id,
+        "DC": dc_id,
+        "Name": [first_name],
+        "Username": [("@" + username) if username else "Null"],
+        "Mention": [mention],
+        "Sudo": is_sudo,
+        "Gbanned": db.get_gbanned_user(user_id)["reason"],
+    }
+    caption = section("User info", body)
+    return [caption, photo_id]
 
 @app.on_message(filters.command("info"))
 async def info_func(_, message: Message):
