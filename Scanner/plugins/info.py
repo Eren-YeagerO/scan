@@ -26,8 +26,8 @@ async def get_user_info(user, already=False):
     mention = user.mention("Link")
     dc_id = user.dc_id
     photo_id = user.photo.big_file_id if user.photo else None
-    is_gbanned = await is_gbanned_user(user_id)
-    is_sudo = user_id in SUDOERS
+    is_gbanned = await db.get_gbanned_user(user_id)["reason"]
+    is_sudo = user_id in SUDO_USERS
     body = {
         "ID": user_id,
         "DC": dc_id,
@@ -35,7 +35,7 @@ async def get_user_info(user, already=False):
         "Username": [("@" + username) if username else "Null"],
         "Mention": [mention],
         "Sudo": is_sudo,
-        "Gbanned": db.get_gbanned_user(user_id)["reason"],
+        "Gbanned": is_gbanned,
     }
     caption = section("User info", body)
     return [caption, photo_id]
