@@ -3,6 +3,14 @@ from pyrogram import filters
 from Scanner import pbot as app
 from pyrogram.enums.parse_mode import ParseMode
 
+def extract_gban(message):
+    hmmm = message.split("-id")[1]
+    hmm = hmmm.split("-r")  
+    id = int(hmm[0].split()[0].strip())
+    reason = hmm[1].split("-p")[0].strip()
+    proof = hmm[1].split("-p")[1].strip()
+    return id, reason, proof
+
 @app.on_message(filters.command("info"))
 @app.on_edited_message(filters.command('info'))
 async def info(_,msg:Message):
