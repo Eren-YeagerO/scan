@@ -41,7 +41,7 @@ async def get_user_info(user, already=False):
     caption = section("User info", body)
     return [caption, photo_id]
 
-@Client.on_message(command("info"))
+@pbot.on_message(command("info"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
