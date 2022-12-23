@@ -1,9 +1,9 @@
 import os
 
 from pyrogram import filters
+from pyrogram import Client
 from pyrogram.types import Message
 
-from Scanner import pbot as app
 from Scanner.vars import SUDO_USERS
 from Scanner.db import global_bans_db as db
 
@@ -40,7 +40,7 @@ async def get_user_info(user, already=False):
     caption = section("User info", body)
     return [caption, photo_id]
 
-@app.on_message(filters.command("info"))
+@Client.on_message(filters.command("info"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
