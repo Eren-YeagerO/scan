@@ -18,7 +18,7 @@ async def info(_,msg:Message):
         user = msg.text.split(None, 1)[1]
         
     x = await app.get_users(user)
-    is_gbanned = await db.get_gbanned_user(x.id)
+    is_gbanned = db.get_gbanned_user(x.id)
     z = """User id : <code>{}</code> \nName : {} \nDC id : <code>{}</code>\nPermanent Link : <a href='tg://user?id={}'>{}</a>\nGbanned: {}""".format(x.id,x.first_name,x.dc_id,x.id,x.first_name, is_gbanned)
     file = x.photo.big_file_id if x.photo else None
     photo = await app.download_media(file)
