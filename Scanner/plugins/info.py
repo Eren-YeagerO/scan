@@ -5,6 +5,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from Scanner.vars import SUDO_USERS
+from Scanner.utils.filters import command
 from Scanner.db import global_bans_db as db
 
 def extract_gban(message):
@@ -40,7 +41,7 @@ async def get_user_info(user, already=False):
     caption = section("User info", body)
     return [caption, photo_id]
 
-@Client.on_message(filters.command("info"))
+@Client.on_message(command("info"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
