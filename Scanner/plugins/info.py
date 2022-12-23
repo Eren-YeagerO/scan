@@ -4,6 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from Scanner.vars import SUDO_USERS
+from Scanner import pbot
 from Scanner.utils.filters import command
 from Scanner.db import global_bans_db as db
 
@@ -17,7 +18,7 @@ def extract_gban(message):
 
 async def get_user_info(user, already=False):
     if not already:
-        user = await Client.get_user(user)
+        user = await pbot.get_user(user)
     if not user.first_name:
         return ["Deleted account", None]
     user_id = user.id
