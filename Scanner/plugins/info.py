@@ -4,6 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 from Scanner.vars import SUDO_USERS
+from Scanner.utils.sections import section
 from Scanner import pbot
 from Scanner.utils.filters import command
 from Scanner.db import global_bans_db as db
