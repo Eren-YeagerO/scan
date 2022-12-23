@@ -19,7 +19,15 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
-TEMST = 
+TEMST = Usage: 
+    /start
+    /scan -id (id) -r (reason)  -p (proof link)
+    /revert -id (id)
+    /gscan (reason)
+    /grevert
+    /stats
+    /ping
+    /sudos
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
