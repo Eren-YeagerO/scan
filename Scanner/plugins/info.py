@@ -9,6 +9,17 @@ from Scanner import pbot
 from Scanner.utils.filters import command
 from Scanner.db import global_bans_db as db
 
+def extract_gban(message):
+    hmmm = message.split("-id")[1]
+    hmm = hmmm.split("-r")  
+    id = int(hmm[0].split()[0].strip())
+    reason = hmm[1].split("-p")[0].strip()
+    proof = hmm[1].split("-p")[1].strip()
+    return id, reason, proof
+
+proof = extract_gban(message.text)
+
+
 async def get_user_info(user, already=False):
     if not already:
         user = await pbot.get_users(user)
@@ -20,7 +31,7 @@ async def get_user_info(user, already=False):
     mention = user.mention("Link")
     dc_id = user.dc_id
     photo_id = user.photo.big_file_id if user.photo else None
-    is_gbanned = db.get_gbanned_user(user_id)
+    is_gbanned = db.gban_user(user_id, message.from_user.id, f"{reason} Proof: {proof}")
     is_sudo = user_id in SUDO_USERS
     body = {
         "ID": user_id,
