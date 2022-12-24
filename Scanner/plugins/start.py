@@ -42,6 +42,7 @@ I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the sa
                 [
                     InlineKeyboardButton(
                         "👻Commands👻", callback_data="about_"),
+                ],
                 [
                     InlineKeyboardButton(
                          "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")  
