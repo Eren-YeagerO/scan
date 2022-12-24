@@ -21,10 +21,10 @@ TIME_DURATION_UNITS = (
 
 async def _cb(c: app, cb: CallbackQuery):
     query = cb.data
-    if query=='about_':
+    if query=="about_":
         msg_id = cb.message.id
         chat_id = cb.message.chat.id
-        await c.edit_message_text(chat_id, msg_id, text='text')
+        await c.edit_message_text(chat_id, msg_id, text='text yoyo')
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
@@ -38,12 +38,13 @@ I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the sa
                 [
                     InlineKeyboardButton(
                         "👹Help👹", url=f"https://t.me/{SUPPORT_CHAT}"),
-                    InlineKeyboardButton(
-                        "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],
                 [
                     InlineKeyboardButton(
-                        "👹Help👹", callback_data='about_'),
+                        "👻Commands👻", callback_data="about_"),
+                [
+                    InlineKeyboardButton(
+                         "👺Add Me To Your Chat👺", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")  
                 ],
            ]
         ),
