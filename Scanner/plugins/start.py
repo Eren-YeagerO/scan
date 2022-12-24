@@ -1,6 +1,7 @@
 from Scanner.plugins.stats import get_readable_time
 from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+from 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
 
 import time
 from datetime import datetime
