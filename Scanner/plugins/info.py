@@ -31,7 +31,7 @@ async def get_user_info(user, already=False):
     mention = user.mention("Link")
     dc_id = user.dc_id
     photo_id = user.photo.big_file_id if user.photo else None
-    is_gbanned = db.gban_user(user_id, message.from_user.id, f"{reason} Proof: {proof}")
+    is_gbanned = db.get_gbanned_user(user_id, message.from_user.id, f"{reason} Proof: {proof}")
     is_sudo = user_id in SUDO_USERS
     body = {
         "ID": user_id,
