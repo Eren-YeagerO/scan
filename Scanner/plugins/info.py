@@ -17,8 +17,6 @@ def extract_gban(message):
     proof = hmm[1].split("-p")[1].strip()
     return id, reason, proof
 
-user_id, reason, proof = extract_gban(message.text)
-
 
 async def get_user_info(user, already=False):
     if not already:
