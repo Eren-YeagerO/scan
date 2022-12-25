@@ -10,5 +10,5 @@ from Scanner import ubot
 
 @ubot.on_message(filters.text & filters.private & ~filters.me & ~filters.bot)
 async def pmPermit(client: ubot, message: Message):
-  await ubot.send_message(message.chat.id,f"Hey 👋 I am the assistant of Shikimori Music bot, didn't have a time to talk with you 🙂 kindly join @{SUPPORT_CHAT} for getting Support.")
+  await ubot.send_message(message.chat.id,f"Dɪᴅɴ'ᴛ ʜᴀᴠᴇ ᴛɪᴍᴇ ᴛᴏ ᴛᴀʟᴋ ᴡɪᴛʜ ʏᴏᴜ 🙂 ᴋɪɴᴅʟʏ ᴊᴏɪɴ @{SUPPORT_CHAT} ғᴏʀ ɢᴇᴛᴛɪɴɢ Sᴜᴘᴘᴏʀᴛ.")
   return
