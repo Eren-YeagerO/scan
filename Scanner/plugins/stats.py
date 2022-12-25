@@ -57,7 +57,7 @@ async def stats(_, message: Message):
         status += f"**┈➤ Pʏʀᴏɢʀᴀᴍ Vᴇʀsɪᴏɴ:** `{str(pyrover)}`\n✦"
         status += f"**┈➤ Uᴘᴛɪᴍᴇ:** `{str(botuptime)}`\n"
 
-        img = "https://telegra.ph/file/a0f299ae4eba53370ce8b.mp4"
+        img = "https://telegra.ph/file/73376fdcd45afe3756535.mp4"
         await message.reply_animation(
             img,
             caption = status
@@ -69,4 +69,4 @@ async def stats(_, message: Message):
             parse_mode= enums.ParseMode.MARKDOWN,
         )
     else:
-        await message.reply_text("This is SUDO restricted command.")
+        await message.reply_text("Grow up Kid, This is SUDO restricted command.")
