@@ -31,7 +31,7 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""ᴡᴇʟᴄᴏᴍᴇ : {message.from_user.mention()}
 
-I am a @SurveyCorpsXteam Scanner, I can Gban users from muiltiple bots at the same time.
+I am a Scanner, I can Gban users from muiltiple bots at the same time.
 """,
     reply_markup=InlineKeyboardMarkup(
             [
