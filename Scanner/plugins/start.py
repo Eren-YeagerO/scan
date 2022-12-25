@@ -43,9 +43,9 @@ async def _cb(c: app, cb: CallbackQuery):
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""ᴡᴇʟᴄᴏᴍᴇ : {message.from_user.mention()}
+        f"""✧Welcome {message.from_user.mention()}✧
 
-I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple bots at the same time.
+❃I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple Bots at the same time.[❃](https://te.legra.ph/file/48f9d1107fb82221c2227.jpg)
 """,
     reply_markup=InlineKeyboardMarkup(
             [
