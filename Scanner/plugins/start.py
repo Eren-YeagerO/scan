@@ -28,7 +28,7 @@ async def _cb(c: app, cb: CallbackQuery):
         await c.edit_message_text(chat_id, msg_id, text="""
 ╒═「 How To Use  『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 •Sᴄᴀɴɴᴇʀ 💀 」
 ┌━━
-├ /info (To Know Whether You Are              │ Criminal Or Innocent)
+├ /sinfo (To Know Whether You Are              │ Criminal Or Innocent)
 ├ /ping 
 ├ /sudos
 └━━
@@ -47,7 +47,7 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""✧Welcome {message.from_user.mention()}✧
 
-❃I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple Bots at the same time.[❃](https://te.legra.ph/file/48f9d1107fb82221c2227.jpg)
+❃I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[❃](https://te.legra.ph/file/48f9d1107fb82221c2227.jpg)
 """,
     reply_markup=InlineKeyboardMarkup(
             [
