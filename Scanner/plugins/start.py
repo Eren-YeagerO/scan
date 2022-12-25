@@ -27,16 +27,16 @@ async def _cb(c: app, cb: CallbackQuery):
         chat_id = cb.message.chat.id
         await c.edit_message_text(chat_id, msg_id, text='╒═「 How To Use  『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 •Sᴄᴀɴɴᴇʀ 💀 」
 ┌━━
-├ /info (To Know Whether You Are              │ Criminal Or Innocent)
+├ /info - To Know Whether You Are              │ Criminal Or Innocent
 ├ /ping 
 ├ /sudos
 └━━
 ╒════「⚡Sudo Users Only Commands」 
 │
-├ /scan -id (id) -r (reason)  -p (proof link)
-├ /revert -id (id)
-├ /gscan (reason) (To Scan Whole Group │ Members)
-├ /grevert (To Ungban Whole Group           │ Members)
+├ /scan -id id -r reason  -p proof link
+├ /revert -id id
+├ /gscan - reason To Scan Whole Group │ Members
+├ /grevert - To Ungban Whole Group           │ Members
 ├ /stats
 ┖━━')
 
