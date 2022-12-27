@@ -47,10 +47,11 @@ async def _cb(c: app, cb: CallbackQuery):
 ├ /grevert (To Ungban Whole Group           │ Members)
 ├ /stats
 ┖━━
-""", reply_markup=InlineKeyboardMarkup(
+""",
+reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton( "Close🔐", callback_data=f"close#{message.from_user.id})
+                    InlineKeyboardButton( "Close", callback_data=f"close#{message.from_user.id})
                 ],
             ]
          ),
