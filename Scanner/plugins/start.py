@@ -19,21 +19,6 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
-@app.on_callback_query(filters.regex("^close"))
-async def close_callback(bot: Client, query: CallbackQuery):
-    i, userid = query.data.split("#")
-    if query.from_user.id != int(userid):
-        return await query.answer("⚠️ Access Denied!", True)
-    await query.message.delete()
-
-buttons = [
-            [
-                InlineKeyboardButton(
-                    "🔐 Close", callback_data=f"close#{message.from_user.id}"
-                )
-            ],
-          ]
-
 @app.on_callback_query()
 async def _cb(c: app, cb: CallbackQuery):
     query = cb.data
