@@ -19,12 +19,12 @@ import traceback
 from inspect import getfullargspec
 from io import StringIO
 from time import time
-
 from pyrogram import filters
 from pyrogram.types import (InlineKeyboardButton,
                             InlineKeyboardMarkup, Message)
 
 from Scanner import pbot as app
+from Scanner.utils.filters import command
 from Scanner.vars import SUDO_USERS as SUDOERS
 
 
@@ -42,8 +42,7 @@ async def edit_or_reply(msg: Message, **kwargs):
     await func(**{k: v for k, v in kwargs.items() if k in spec})
 
 
-@app.on_message(
-    filters.command("eval")
+@app.on_message(command("eval")
     & SUDOERS
     & ~filters.forwarded
     & ~filters.via_bot
@@ -150,8 +149,7 @@ async def forceclose_command(_, CallbackQuery):
         return
 
 
-@app.on_message(
-    filters.command("sh")
+@app.on_message(command("sh")
     & SUDOERS
     & ~filters.forwarded
     & ~filters.via_bot
