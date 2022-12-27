@@ -19,13 +19,6 @@ TIME_DURATION_UNITS = (
     ("sec", 1),
 )
 
-@app.on_callback_query(filters.regex("^close"))
-async def close_callback(bot: Client, query: CallbackQuery):
-    i, userid = query.data.split("#")
-    if query.from_user.id != int(userid):
-        return await query.answer("⚠️ Access Denied!", True)
-    await query.message.delete()
-
 @app.on_callback_query()
 async def _cb(c: app, cb: CallbackQuery):
     query = cb.data
@@ -47,15 +40,7 @@ async def _cb(c: app, cb: CallbackQuery):
 ├ /grevert (To Ungban Whole Group           │ Members)
 ├ /stats
 ┖━━
-""",
-reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("Close", callback_data=f"close#{message.from_user.id}),
-                ],
-           ]
-        ),
-     )
+""")
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
