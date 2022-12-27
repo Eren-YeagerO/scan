@@ -31,7 +31,8 @@ buttons = [
                 InlineKeyboardButton(
                     "🔐 Close", callback_data=f"close#{message.from_user.id}"
                 )
-            ]
+            ],
+          ]
 
 @app.on_callback_query()
 async def _cb(c: app, cb: CallbackQuery):
