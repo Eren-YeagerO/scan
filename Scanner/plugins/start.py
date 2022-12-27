@@ -51,11 +51,11 @@ async def _cb(c: app, cb: CallbackQuery):
 reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Close", callback_data=f"close#{message.from_user.id})
+                    InlineKeyboardButton( "Close", callback_data=f"close#{message.from_user.id})
                 ],
-            ]
-         ),
-      )
+           ]
+        ),
+     )
 
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
