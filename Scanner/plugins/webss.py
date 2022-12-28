@@ -29,7 +29,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from Scanner import SUDO_USERS as SUDOERS, USERBOT_PREFIX, pbot as app, ubot as app2, eor
-from wbb.core.decorators.errors import capture_err
+from Scanner.utils.errors import capture_err
 from Scanner.utils.http import post
 
 
