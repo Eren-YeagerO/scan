@@ -11,7 +11,7 @@ from Scanner.utils.filters import command
 from Scanner.vars import GBAN_CHATS, LOG_CHANNEL_ID, SUDO_USERS
 
 @pbot.on_message(
-    command(["userbotjoin", "botjoin", "join"]) & ~filters.private & ~filters.bot
+    command(["userbotjoin", "botjoin", "zjoin"]) & ~filters.private & ~filters.bot
 )
 @errors
 async def joinchat(client, message):
@@ -19,7 +19,7 @@ async def joinchat(client, message):
         Test = message.text.split(" ")
         username = Test[1].replace("@", "")
     else:
-        await message.reply_text("Format: /join @username")
+        await message.reply_text("Format: /zjoin @username")
         return
 
     try:
