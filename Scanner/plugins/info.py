@@ -24,12 +24,11 @@ async def get_user_info(user, already=False):
     is_sudo = user_id in SUDO_USERS
     body = {
         "ID": user_id,
-        "DC": dc_id,
         "Name": [first_name],
         "Username": [("@" + username) if username else "Null"],
         "Mention": [mention],
-        "God Of Destruction?": is_sudo,
-        "Criminal?": is_gbanned,
+        "Protector": is_sudo,
+        "Criminal": is_gbanned,
     }
     caption = section("User info", body)
     return [caption, photo_id]
