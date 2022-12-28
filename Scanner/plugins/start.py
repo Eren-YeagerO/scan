@@ -44,10 +44,12 @@ async def _cb(c: app, cb: CallbackQuery):
 ├ /grevert (To Ungban Whole Group           │ Members)
 ├ /stats
 ┖━━
+➢Note: If You Want To Use The Scanner UserBot To Scan, Revert , Gscan or Grevert Then You Just Have To Put z Before The Command.
+Example: /zscan -id (id) -r (reason)  -p (proof link)
 """, reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Close", callback_data=f"close#")
+                    InlineKeyboardButton("Close❌", callback_data=f"close#")
                 ],
             ]
         ),
