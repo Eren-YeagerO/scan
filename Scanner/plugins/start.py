@@ -50,7 +50,7 @@ async def _cb(c: app, cb: CallbackQuery):
 """, reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Close", callback_data=f"close#{cb.message.from_user.id}")
+                    InlineKeyboardButton("Close", callback_data=f"close#")
                 ],
             ]
         ),
