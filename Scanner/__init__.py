@@ -3,6 +3,7 @@ import time
 
 from aiohttp import ClientSession
 from pyrogram import Client
+from pyrogram.types import Message
 from telethon import TelegramClient
 from telethon.sessions import MemorySession
 
