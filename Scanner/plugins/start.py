@@ -21,9 +21,6 @@ TIME_DURATION_UNITS = (
 
 @app.on_callback_query(filters.regex("^close"))
 async def close_callback(bot: Client, query: CallbackQuery):
-    i, userid = query.data.split("#")
-    if query.from_user.id != int(userid):
-        return await query.answer("⚠️ Access Denied!", True)
     await query.message.delete()
 
 @app.on_callback_query()
