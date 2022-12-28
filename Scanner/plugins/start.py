@@ -30,7 +30,7 @@ async def _cb(c: app, cb: CallbackQuery):
         msg_id = cb.message.id
         chat_id = cb.message.chat.id
         await c.edit_message_text(chat_id, msg_id, text="""
-╒═「 How To Use  『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 •Sᴄᴀɴɴᴇʀ 💀 」
+**╒═「 How To Use  『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 •Sᴄᴀɴɴᴇʀ 💀 」**
 ┌━━
 ├ /sinfo (To Know Whether You Are              │ Criminal Or Innocent)
 ├ /ping 
@@ -44,7 +44,7 @@ async def _cb(c: app, cb: CallbackQuery):
 ├ /grevert (To Ungban Whole Group           │ Members)
 ├ /stats
 ┖━━
-➢Note: If You Want To Use The Scanner UserBot To Scan, Revert , Gscan or Grevert Then You Just Have To Put z Before The Command.
+**➢Note: If You Want To Use The Scanner UserBot To Scan, Revert , Gscan or Grevert Then You Just Have To Put z Before The Command.**
 Example: /zscan -id (id) -r (reason)  -p (proof link)
 """, reply_markup=InlineKeyboardMarkup(
             [
