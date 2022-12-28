@@ -20,7 +20,7 @@ def extract_gban(message):
 async def scan(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     try:
@@ -33,7 +33,7 @@ async def scan(_, message: Message):
         return
     if int(user_id) in SUDO_USERS:
         await message.reply_text(
-            "That user is part of the Association\nI can't act against our own.",
+            "That user is part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association\nI can't act against our own.",
         )
         return
     
@@ -85,7 +85,7 @@ Scanned By: {message.from_user.id}
 async def revert(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     try:
