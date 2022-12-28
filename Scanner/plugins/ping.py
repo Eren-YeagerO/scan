@@ -85,6 +85,3 @@ async def sysinfo(client: Client, message: Message):
         )
         status += "<b>┖</b>\n"
         await message.reply_text(status, parse_mode= enums.ParseMode.HTML)
-    
-    else:
-        await message.reply_text("This is SUDO restricted command.")
