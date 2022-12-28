@@ -60,7 +60,7 @@ async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""✧Welcome {message.from_user.mention()}✧
 
-I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[❃](https://telegra.ph/file/461b95b7e7c89412b13b7.jpg)
+I am a @SurveyCorpsXteam Scanner, I can Global Ban users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[.](https://telegra.ph/file/461b95b7e7c89412b13b7.jpg) And if you own any Bot and want to connect that Bot with our scanner, Please Join here @SurveyCorpsHQ.
 """,
     reply_markup=InlineKeyboardMarkup(
             [
