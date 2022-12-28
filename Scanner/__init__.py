@@ -41,7 +41,7 @@ else:
     BOT_NAME = bot.first_name
 BOT_USERNAME = bot.username
 
-USERBOT_PREFIX = USERBOT_PREFIX
+USERBOT_PREFIX = "."
 
 ub = ubot.get_me()
 ASS_ID = ub.id
