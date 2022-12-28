@@ -43,7 +43,7 @@ async def info_func(_, message: Message):
     else:
         user = message.text.split(None, 1)[1]
 
-    m = await message.reply_text("Processing.....")
+    m = await message.reply_text("**Getting Data from 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ.....**")
 
     try:
         info_caption, photo_id = await get_user_info(user)
