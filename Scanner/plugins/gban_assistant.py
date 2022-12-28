@@ -21,7 +21,7 @@ def extract_gban(message):
 async def scan(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     try:
@@ -30,11 +30,11 @@ async def scan(_, message: Message):
         await message.reply_text("id must be integer.")
         return
     except:
-        await message.reply_text("Format: `/scan -id (id) -r (reason)  -p (proof link)`")
+        await message.reply_text("Format: `/zscan -id (id) -r (reason)  -p (proof link)`")
         return
     if int(user_id) in SUDO_USERS:
         await message.reply_text(
-            "That user is part of the Association\nI can't act against our own.",
+            "That user is part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association\nI can't act against our own.",
         )
         return
     
@@ -86,7 +86,7 @@ Scanned By: {message.from_user.id}
 async def revert(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     try:
@@ -98,7 +98,7 @@ async def revert(_, message: Message):
         except ValueError:
             await message.reply_text("id must be integer.")
         except:
-            await message.reply_text("Format: `/revert -id (id)`")
+            await message.reply_text("Format: `/zrevert -id (id)`")
             return
     if not db.is_user_gbanned(user_id):
         await message.reply_text(f"User ID: {user_id} is not scanned.")
@@ -131,7 +131,7 @@ Reverted By: {message.from_user.id}
 async def gscan(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     
@@ -173,7 +173,7 @@ async def gscan(_, message: Message):
 async def grevert(_, message: Message):
     if message.from_user.id not in SUDO_USERS:
         await message.reply_text(
-            "You need to be part of the Association to scan a user.",
+            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
         )
         return
     reverted = []
