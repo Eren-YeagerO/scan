@@ -18,11 +18,6 @@ def extract_gban(message):
 
 @Client.on_message(command("scan"))
 async def scan(_, message: Message):
-    if message.from_user.id not in SUDO_USERS:
-        await message.reply_text(
-            "You need to be part of 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Association to scan a user.",
-        )
-        return
     try:
         user_id, reason, proof = extract_gban(message.text)
     except ValueError:
