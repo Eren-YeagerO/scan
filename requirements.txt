@@ -24,3 +24,5 @@ wget
 telethon
 regex
 html5lib
+httpx
+httpx[http2]
