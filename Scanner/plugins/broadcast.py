@@ -2,7 +2,7 @@ from pyrogram import filters
 import datetime
 import time
 from Scanner.database.users_chats_db import db
-from Scanner.vars import SUDO_USERS
+from Scanner.vars import SUDO_USERS as SUDO
 from utils import broadcast_messages
 import asyncio
 from Scanner import pbot as app
