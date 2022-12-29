@@ -10,6 +10,8 @@ from Scanner.vars import API_HASH, API_ID, BOT_TOKEN, SESSION_STRING
 
 starttime = time.time()
 
+cleanmode = {}
+
 # enable logging
 FORMAT = "[Scanner] %(message)s"
 logging.basicConfig(
