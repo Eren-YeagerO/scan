@@ -7,7 +7,7 @@ from PIL import Image
 from Scanner import pbot as app
 from Scanner.utils.http import http
 from Scanner.vars import CMD_OP as COMMAND_HANDLER
-from Scanner.utils import capture_err
+from Scanner.utils.errors import capture_err
 
 
 @app.on_message(filters.command(["webss"], COMMAND_HANDLER))
