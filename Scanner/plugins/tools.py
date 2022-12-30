@@ -23,7 +23,7 @@ from Scanner.vars import SUDO_USERS as SUDO, LOG_CHANNEL_ID as LOG_CHANNEL, SUPP
 LOGGER = getLogger(__name__)
 
 
-count = app.get_chat_members_count(chat_id)
+count = app.get_chat_members_count(chat.id)
 
 def circle(pfp, size=(215, 215)):
     pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
