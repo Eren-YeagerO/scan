@@ -66,7 +66,7 @@ def welcomepic(app, message,pic, user, chat, count, id):
     font = ImageFont.truetype(
         "Calistoga-Regular.ttf", 37
     )  # <- Text Font of the Member Count. Change the text size for your preference
-    member_text = f"User#{count}, Selamat Datang {user}"  # <- Text under the Profilepicture with the Membercount
+    member_text = f"Welcome {user}"  # <- Text under the Profilepicture with the Membercount
     draw_multiple_line_text(background, member_text, font, 395)
     draw_multiple_line_text(background, chat, font, 47)
     ImageDraw.Draw(background).text(
@@ -98,7 +98,7 @@ async def member_has_joined(c: app, member: ChatMemberUpdated):
     if user.id in SUDO:
         await c.send_message(
             member.chat.id,
-            "Waw, owner ku yang keren baru saja bergabung ke grup!",
+            "Wow, my cool friend just joined the chat!",
         )
         return
     elif user.is_bot:
