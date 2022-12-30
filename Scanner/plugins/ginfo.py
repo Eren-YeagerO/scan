@@ -31,7 +31,8 @@ async def get_chat_info(chat, already=False):
     else:
         return
     body = f"""
-:Chat Info:
+**Chat Info:**
+
 **ID:** `{chat_id}`
 **Type:** `{type_}`
 **Name:** `{title}`
@@ -52,7 +53,7 @@ async def chat_info_func(_, message: Message):
     try:
         if len(message.command) > 2:
             return await message.reply_text(
-                "**Usage:**/ginfo [USERNAME|ID]"
+                "**Usage:**/ginfo [UserName|ID]"
             )
 
         if len(message.command) == 1:
@@ -60,7 +61,7 @@ async def chat_info_func(_, message: Message):
         elif len(message.command) == 2:
             chat = message.text.split(None, 1)[1]
 
-        m = await message.reply_text("Processing")
+        m = await message.reply_text("**Getting Data From 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ**")
         
 
         #info_caption, photo_id = await get_chat_info(chat)
