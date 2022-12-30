@@ -30,6 +30,7 @@ def new_member(update: Update, context: CallbackContext):
     user = update.effective_user
     msg = update.effective_message
 
+chat = update.effective_chat
 count = chat.get_member_count()
 
 def circle(pfp, size=(215, 215)):
