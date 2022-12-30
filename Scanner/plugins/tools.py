@@ -3,7 +3,7 @@ import time
 import os
 from logging import getLogger
 from Scanner.utils.http import http
-from pyrogram import enums, filters
+from pyrogram import enums, filters, Client 
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import (
     ChatSendMediaForbidden,
@@ -22,8 +22,6 @@ from Scanner.vars import SUDO_USERS as SUDO, LOG_CHANNEL_ID as LOG_CHANNEL, SUPP
 
 LOGGER = getLogger(__name__)
 
-
-count = app.get_chat_members_count(chat.id)
 
 def circle(pfp, size=(215, 215)):
     pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
@@ -54,7 +52,10 @@ def draw_multiple_line_text(image, text, font, text_start_height):
 
 
 @asyncify
-def welcomepic(pic, user, chat, count, id):
+def welcomepic(app, message,pic, user, chat, count, id):
+    count = await app.get_chat_members_count(message.chat.id)
+    new = int(count) + 1
+     
     background = Image.open("img/bg.png")  # <- Background Image (Should be PNG)
     background = background.resize((1024, 500), Image.ANTIALIAS)
     pfp = Image.open(pic).convert("RGBA")
@@ -70,7 +71,7 @@ def welcomepic(pic, user, chat, count, id):
     draw_multiple_line_text(background, chat, font, 47)
     ImageDraw.Draw(background).text(
         (530, 460),
-        f"You Are {count}th Member Here.",
+        f"you are {new}th member",
         font=ImageFont.truetype("Calistoga-Regular.ttf", 28),
         size=20,
         align="right",
@@ -223,7 +224,7 @@ async def save_group(bot, message):
             except AttributeError:
                 pic = "img/profilepic.png"
             welcomeimg = await welcomepic(
-                pic, u.first_name, message.chat.title, count, u.id
+                bot,message,pic, u.first_name, message.chat.title, count, u.id
             )
             if (temp.MELCOW).get(f"welcome-{message.chat.id}") is not None:
                 try:
