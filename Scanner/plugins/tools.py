@@ -71,7 +71,7 @@ def welcomepic(app, message,pic, user, chat, count, id):
     draw_multiple_line_text(background, chat, font, 47)
     ImageDraw.Draw(background).text(
         (530, 460),
-        f"you are {new}th member",
+        f"You Are {new}th Member Here",
         font=ImageFont.truetype("Calistoga-Regular.ttf", 28),
         size=20,
         align="right",
