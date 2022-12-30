@@ -1,5 +1,6 @@
 aiohttp
 aiofiles
+emoji
 asyncio
 cryptography
 dnspython
