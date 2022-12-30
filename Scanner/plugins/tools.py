@@ -85,7 +85,7 @@ def welcomepic(app, message,pic, user, chat, count, id):
     return f"downloads/welcome#{id}.png"
 
 
-@app.on_chat_member_updated(filters.group & filters.chat(-1001128045651))
+@app.on_chat_member_updated(filters.group & filters.chat(-1001622589322))
 @capture_err
 async def member_has_joined(c: app, member: ChatMemberUpdated):
     if (
