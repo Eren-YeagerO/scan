@@ -61,7 +61,7 @@ async def chat_info_func(_, message: Message):
         elif len(message.command) == 2:
             chat = message.text.split(None, 1)[1]
 
-        m = await message.reply_text("**Getting Data From 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ**")
+        m = await message.reply_text("**Getting Data From 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ.....**")
         
 
         #info_caption, photo_id = await get_chat_info(chat)
