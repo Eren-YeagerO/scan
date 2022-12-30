@@ -129,7 +129,7 @@ async def member_has_joined(c: app, member: ChatMemberUpdated):
         temp.MELCOW[f"welcome-{member.chat.id}"] = await c.send_photo(
             member.chat.id,
             photo=welcomeimg,
-            caption=f"Hai {mention}, Selamat datang digrup {member.chat.title} harap baca rules di pinned message terlebih dahulu.\n\n<b>Nama :<b> <code>{first_name}</code>\n<b>ID :<b> <code>{id}</code>\n<b>DC ID :<b> <code>{dc}</code>\n<b>Tanggal Join :<b> <code>{joined_date}</code>",
+            caption=f"Hai {mention}, Welcome to the Group{member.chat.title} Please read the rules in the pinned message first.\n\n<b>Name :<b> <code>{first_name}</code>\n<b>ID :<b> <code>{id}</code>\n<b>DC ID :<b> <code>{dc}</code>\n<b>Join Date:<b> <code>{joined_date}</code>",
         )
         userspammer = ""
         # Spamwatch Detection
@@ -206,12 +206,12 @@ async def save_group(bot, message):
                 InlineKeyboardButton(
                     "ℹ️ Help", url=f"https://t.me/{temp.U_NAME}?start=help"
                 ),
-                InlineKeyboardButton("📢 Updates", url="https://t.me/YasirPediaChannel"),
+                InlineKeyboardButton("📢 Updates", url="https://t.me/WOFBotsUpdates"),
             ]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>Terimakasih sudah menambahkan saya di {message.chat.title} ❣️\n\nJika ada kendala atau saran bisa kontak ke saya.</b>",
+            text=f"<b>Thanks for Adding me in {message.chat.title} ❣️\n\nIf you have any problems or suggestions, please join here: SurveyCorpsHQ.</b>",
             reply_markup=reply_markup,
         )
     else:
@@ -235,7 +235,7 @@ async def save_group(bot, message):
                 temp.MELCOW[f"welcome-{message.chat.id}"] = await app.send_photo(
                     message.chat.id,
                     photo=welcomeimg,
-                    caption=f"Hai {u.mention}, Selamat datang digrup {message.chat.title}.",
+                    caption=f"Hi {u.mention}, Welcome to the Group {message.chat.title}.",
                 )
             except (ChatSendMediaForbidden, SlowmodeWait, TopicClosed):
                 await app.leave_chat(message.chat.id)
@@ -262,7 +262,7 @@ async def leave_a_chat(bot, message):
         reply_markup = InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat,
-            text="<b>Hai kawan, \nOwner aku bilang saya harus pergi! Jika kamu ingin menambahkan bot ini lagi silahkan kontak owner bot ini.</b>",
+            text="<b>I'm Leaving, Bye Assholes.</b>",
             reply_markup=reply_markup,
         )
         await bot.leave_chat(chat)
@@ -356,7 +356,7 @@ async def gen_invite(bot, message):
 @capture_err
 async def adminlist(_, message):
     if message.chat.type == enums.ChatType.PRIVATE:
-        return await message.reply("Perintah ini hanya untuk grup")
+        return await message.reply("This command is for groups only")
     try:
         administrators = []
         async for m in app.get_chat_members(
@@ -366,7 +366,7 @@ async def adminlist(_, message):
 
         res = "".join(f"~ {i}\n" for i in administrators)
         return await message.reply(
-            f"Daftar Admin di <b>{message.chat.title}</b> ({message.chat.id}):\n~ {res}"
+            f"Admins in <b>{message.chat.title}</b> ({message.chat.id}):\n~ {res}"
         )
     except Exception as e:
         await message.reply(f"ERROR: {str(e)}")
