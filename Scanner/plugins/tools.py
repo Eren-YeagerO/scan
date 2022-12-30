@@ -3,6 +3,7 @@ import time
 import os
 from logging import getLogger
 from telegram import Update
+from telegram.ext import CallbackContext
 from Scanner.utils.http import http
 from pyrogram import enums, filters
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardButton, InlineKeyboardMarkup
@@ -23,7 +24,12 @@ from Scanner.vars import SUDO_USERS as SUDO, LOG_CHANNEL_ID as LOG_CHANNEL, SUPP
 
 LOGGER = getLogger(__name__)
 
-chat = update.effective_chat
+def new_member(update: Update, context: CallbackContext):
+    bot, job_queue = context.bot, context.job_queue
+    chat = update.effective_chat
+    user = update.effective_user
+    msg = update.effective_message
+
 count = chat.get_member_count()
 
 def circle(pfp, size=(215, 215)):
