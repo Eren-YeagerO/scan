@@ -38,7 +38,7 @@ async def get_user_info(user, already=False):
         "📎 Link To Profile": [mention],
         "💂 Protector": is_sudo,
         "💣 Criminal": is_gbanned,
-        "☠️ Gban reason": {reason},
+        "☠️ Gban reason": reason,
     }
     caption = section("User info", body)
     return [caption, photo_id]
