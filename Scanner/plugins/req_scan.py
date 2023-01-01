@@ -31,7 +31,7 @@ def content(msg: Message) -> [None, str]:
         return None
 
 
-@Client.on_message(filters.command("reqgban"))
+@Client.on_message(filters.command("reqscan"))
 @capture_err
 async def reqgban(_, msg: Message):
     if msg.chat.username:
@@ -57,7 +57,9 @@ async def reqgban(_, msg: Message):
 
     
     if msg.chat.type == "private":
-        await msg.reply_text("<b>This command only works in groups.</b>")
+        await msg.reply_text(
+            "<b>This command only works in groups.</b>",
+        )
         return
 
     if user_id == owner_id:
