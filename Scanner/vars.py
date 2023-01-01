@@ -4,6 +4,7 @@ import os
 que = {}
 admins = {}
 
+LOGGER = True
 SESSION_STRING = os.environ.get("SESSION_STRING", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 API_ID = int(os.environ.get("API_ID", None))
