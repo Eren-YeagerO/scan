@@ -206,7 +206,7 @@ async def adminlist(_, message):
 
         res = "".join(f"~ {i}\n" for i in administrators)
         return await message.reply(
-            f"Admins in <b>{message.chat.title}</b> ({message.chat.id}):\n~ {res}"
+            f"Admins in <b>{message.chat.title}</b>:\n {res}"
         )
     except Exception as e:
         await message.reply(f"ERROR: {str(e)}")
