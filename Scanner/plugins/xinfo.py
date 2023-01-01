@@ -80,8 +80,6 @@ async def user_info(c: Gojo, user, already=False):
     is_restricted = user.is_restricted
     photo_id = user.photo.big_file_id if user.photo else None
         
-if user_id == OWNER_ID: omp = "Owner of the bot"
-        
     is_scam = user.is_scam
     is_bot = user.is_bot
     is_fake = user.is_fake
@@ -114,7 +112,6 @@ if user_id == OWNER_ID: omp = "Owner of the bot"
 <b>🗣 First Name</b>: <code>{first_name}</code>
 <b>🔅 Second Name</b>: <code>{last_name}</code>
 <b>🔍 Username</b>: {("@" + username) if username else "NA"}
-<b>🥷 Support user type</b>: <code>{omp}</code>
 <b>💣 Gbanned</b>: {gban}
 <b>☠️ Gban reason</b>: <code>{reason}</code>
 <b>🌐 DC ID</b>: {dc_id}
