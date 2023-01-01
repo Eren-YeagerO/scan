@@ -202,7 +202,7 @@ async def adminlist(_, message):
         async for m in app.get_chat_members(
             message.chat.id, filter=enums.ChatMembersFilter.ADMINISTRATORS
         ):
-            administrators.append(f"{m.user.first_name}")
+            administrators.append(f"{m.user.username}")
 
         res = "".join(f"~ {i}\n" for i in administrators)
         return await message.reply(
