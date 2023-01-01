@@ -79,7 +79,7 @@ async def user_info(c: Gojo, user, already=False):
     is_verified = user.is_verified
     is_restricted = user.is_restricted
     photo_id = user.photo.big_file_id if user.photo else None
-        elif user_id in SUDO_USERS:
+        if user_id in SUDO_USERS:
             omp = "Sudoer"
         elif user_id == OWNER_ID:
             omp = "Owner of the bot"
