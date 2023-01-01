@@ -48,11 +48,11 @@ async def reqgban(_, msg: Message):
     thumb = "https://telegra.ph/file/4be629d34f0c2496a2ec2.png"
     
     bug_report = f"""
-**#GbanReq : ** **@{owner_usn}**
+**#ScanReq : ** **@{owner_usn}**
 **From User : ** **{mention}**
 **User ID : ** **{user_id}**
 **Group : ** **{chat_username}**
-**Gban Target : ** **{bugs}**
+**Scan Target : ** **{bugs}**
 **Event Stamp : ** **{datetimes}**"""
 
     
@@ -65,18 +65,18 @@ async def reqgban(_, msg: Message):
     if user_id == owner_id:
         if bugs:
             await msg.reply_text(
-                "<b>How can be bot owner requesting gban??</b>",
+                "<b>How can the Creator of the Bot requesting a Scan???</b>",
             )
             return
         else:
             await msg.reply_text(
-                "No Useless Gbans!"
+                "<b>Koi Sense hai is baat me? Use valid format pls<\b>"
             )
     elif user_id != owner_id:
         if bugs:
             await msg.reply_text(
-                f"<b>Gban Request : {bugs}</b>\n\n"
-                "<b>The gban was successfully requested to the support group @TogaSupport!</b>",
+                f"<b>Scan Request : {bugs}</b>\n\n"
+                "<b>Successfully sent the Scanning request to the @SurveyCorpsHQ!</b>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -105,7 +105,7 @@ async def reqgban(_, msg: Message):
             )
         else:
             await msg.reply_text(
-                f"<b>No gban to request!</b>",
+                f"<b>No Scan to request!</b>",
             )
         
 
