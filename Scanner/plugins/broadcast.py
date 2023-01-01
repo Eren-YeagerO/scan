@@ -2,7 +2,7 @@ from pyrogram.types import Message
 from pyrogram import filters
 
 from Scanner import pbot as Gojo
-from Scanner.database.chats_db import Chats
+from Scanner.databass.chats_db import Chats
 from Scanner.vars import SUDO_USERS
 from Scanner.utils.filters import command
 
