@@ -45,7 +45,7 @@ async def reqgban(_, msg: Message):
     datetimes_fmt = "%d-%m-%Y"
     datetimes = datetime.utcnow().strftime(datetimes_fmt)
 
-    thumb = "https://telegra.ph/file/4be629d34f0c2496a2ec2.png"
+    thumb = "https://telegra.ph/file/554214d18fca83fb73218.jpg"
     
     bug_report = f"""
 **#ScanReq : ** **@{owner_usn}**
