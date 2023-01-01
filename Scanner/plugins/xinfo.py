@@ -11,7 +11,7 @@ from Scanner.vars import OWNER_ID, SUDO_USERS
 from Scanner import pbot as Gojo
 from Scanner.databass.antispam_db import GBan
 from Scanner.utils.filters import command
-from Scanner.utils.extract_user import extract_user
+from Scanner.databass.extract_user import extract_user
 from Scanner import LOGGER
 
 gban_db = GBan()
