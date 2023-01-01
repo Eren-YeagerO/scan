@@ -3,7 +3,8 @@ from sys import exit as exiter
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
-from Scanner.vars import DATABASE_NAME as DB_NAME, DATABASE_URI as DB_URI, LOGGER
+from Scanner.vars import DATABASE_NAME as DB_NAME, DATABASE_URI as DB_URI
+from Scanner import LOGGER
 
 try:
     Powers_db_client = MongoClient(DB_URI)
