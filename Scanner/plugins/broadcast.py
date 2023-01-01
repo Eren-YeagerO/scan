@@ -1,4 +1,6 @@
 from pyrogram.types import Message
+from pyrogram import filters
+
 from Scanner import pbot as Gojo
 from Scanner.vars import SUDO_USERS
 from Scanner.utils.filters import command
