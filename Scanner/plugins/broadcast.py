@@ -16,7 +16,7 @@ async def chat_broadcast(c: Gojo, m: Message):
         return
 
     exmsg = await m.reply_text("Started broadcasting!")
-    all_chats = (chats.list_chats_by_id()) or {}
+    all_chats = (Chats.list_chats_by_id()) or {}
     err_str, done_broadcast = "", 0
 
     for chat in all_chats:
