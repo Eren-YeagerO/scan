@@ -1,7 +1,7 @@
 from threading import RLock
 from time import time
 
-from Scanner.vars import LOGGER
+from Scanner import LOGGER
 from Scanner.databass import MongoDB
 
 INSERTION_LOCK = RLock()
