@@ -58,13 +58,13 @@ Example: /zscan .id (id) .r (reason)  .p (proof link)
 @Client.on_message(command("start") & filters.private)
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""✧Welcome {message.from_user.mention()}✧
+        f"""**✧Welcome {message.from_user.mention()}✧**
 
-I am a @SurveyCorpsXteam Scanner, I can Globally Ban users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[.](https://graph.org/file/2dc28272665b4c1689c76.jpg)
+**I am a @SurveyCorpsXteam Scanner, I can GBan users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[.](https://graph.org/file/2dc28272665b4c1689c76.jpg)**
 ───────────────────────
-Use /reqscan in a group, will request a scan to our 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ.
+**Use /reqscan in a group, will request a scan to 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ.**
 ───────────────────────
-If you own any Bot and want to connect that Bot with our scanner, Please Join @SurveyCorpsHQ.
+**If you own any Bot and want to connect that Bot with our Scanner, Please Join @SurveyCorpsHQ.**
 """,
     reply_markup=InlineKeyboardMarkup(
             [
@@ -88,4 +88,4 @@ If you own any Bot and want to connect that Bot with our scanner, Please Join @S
 async def start_grp(client: Client, message: Message):
     botuptime = get_readable_time((time.time() - starttime))
     await message.reply_text(
-        f"Hey {message.from_user.mention()}, I'm alive to scan you, want scan bitch😈? kidding, btw I'm alive since : `{botuptime}`")
+        f"**Hey** **{message.from_user.mention()}**, **I'm alive to scan you, want scan bitch😈? kidding, btw I'm alive since :** `{botuptime}`")
