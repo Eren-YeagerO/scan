@@ -97,7 +97,7 @@ async def chat_info(c: Gojo, chat, already=False):
     return caption, photo_id
 
 
-@Gojo.on_message(command(["chinfo", "chatinfo", "chat_info"]))
+@Gojo.on_message(command(["chinfo", "ginfo", "chatinfo", "chat_info"]))
 async def chat_info_func(c: Gojo, message: Message):
     splited = message.text.split()
     if len(splited) == 1:
