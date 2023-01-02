@@ -27,7 +27,7 @@ async def get_user_info(user, already=False):
         "🗣 Name": [first_name],
         "🔍 Username": [("@" + username) if username else "Null"],
         "📎 Link To Profile": [mention],
-        "👽 Protector": is_sudo,
+        "💥 Terminator": is_sudo,
         "🥷 Criminal": is_gbanned,
     }
     caption = section("User info", body)
