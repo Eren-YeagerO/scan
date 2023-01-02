@@ -3,7 +3,7 @@ from asyncio import sleep
 from datetime import datetime
 from traceback import format_exc
 
-from pyrogram import enums
+from pyrogram import enums, filters
 from pyrogram.errors import EntityBoundsInvalid, MediaCaptionTooLong, RPCError
 from pyrogram.types import Message
 
