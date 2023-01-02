@@ -136,7 +136,7 @@ async def scanlist(_, message: Message):
         )
         return
 
-    banfile = "Screw these guys.\n"
+    banfile = "Screw these Cocksuckers.\n"
     for user in banned_users:
         banfile += f"[x] {user['user_id']}\n"
         if user["reason"]:
