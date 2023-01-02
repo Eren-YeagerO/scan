@@ -15,7 +15,7 @@ async def get_user_info(user, already=False):
     if not user.first_name:
         return ["Deleted account", None]
 
-    gbanned, reason_gban = db.gban_user(user.id)
+    gbanned, reason_gban = db.gban_user(user.id)["scanner"]
     if gbanned:
         gban = True
         reason = f"The user is gbanned because {reason_gban}"
