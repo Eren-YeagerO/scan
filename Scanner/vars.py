@@ -22,4 +22,4 @@ SUDO_USERS = list(SUDO_USERS)
 GBAN_CHATS = set(int(x) for x in os.environ.get("GBAN_CHATS", "").split())
 DATABASE_URI = os.environ.get("DATABASE_URI", None)
 DATABASE_NAME = os.environ.get("DATABASE_NAME", None)
-OWNER_USERNAME = "hsslevii"
+OWNER_USERNAME = "HssLevii"
