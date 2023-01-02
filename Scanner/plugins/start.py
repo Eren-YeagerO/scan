@@ -86,4 +86,4 @@ If you own any Bot and want to connect that Bot with our scanner, Please Join @S
 async def start_grp(client: Client, message: Message):
     botuptime = get_readable_time((time.time() - starttime))
     await message.reply_text(
-        f"Hey {message.from_user.mention()}, I'm here for you at {message.chat.title} since : `{botuptime}`")
+        f"Hey {message.from_user.mention()}, I'm alive to scan you, want scan bitch?😈 {message.chat.title} kidding, btw I'm alive since : `{botuptime}`")
