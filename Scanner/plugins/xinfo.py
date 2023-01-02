@@ -9,12 +9,10 @@ from pyrogram.types import Message
 
 from Scanner.vars import OWNER_ID, SUDO_USERS
 from Scanner import pbot as Gojo
-from Scanner.databass.antispam_db import GBan
+from Scanner.db import global_bans_db as db
 from Scanner.utils.filters import command
 from Scanner.databass.extract_user import extract_user
 from Scanner import LOGGER
-
-gban_db = GBan()
 
 
 async def count(c: Gojo, chat):
@@ -62,7 +60,7 @@ async def user_info(c: Gojo, user, already=False):
     if not user.first_name:
         return ["Deleted account", None]
 
-    gbanned, reason_gban = gban_db.get_gban(user.id)
+    gbanned, reason_gban = db.get_gbanned_user(user.id)
     if gbanned:
         gban = True
         reason = f"The user is gbanned because {reason_gban}"
