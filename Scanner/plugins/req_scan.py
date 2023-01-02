@@ -1,5 +1,7 @@
 from datetime import datetime
 
+from telegram import ParseMode
+
 from pyrogram import filters
 from pyrogram.types import (
     InlineKeyboardButton,
