@@ -1,6 +1,6 @@
 from Scanner import pbot
 from Scanner.vars import OWNER_ID, SUDO_USERS
-from pyrogram import Client, enums
+from pyrogram import Client, enums, filters
 from Scanner.utils.filters import command
 from pyrogram.types import Message
 
