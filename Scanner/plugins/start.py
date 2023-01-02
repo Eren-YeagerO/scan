@@ -62,6 +62,7 @@ async def start_(client: Client, message: Message):
 
 I am a @SurveyCorpsXteam Scanner, I can Globally Ban users from muiltiple Bots at the same time. Know your criminal status by using /sinfo[.](https://telegra.ph/file/461b95b7e7c89412b13b7.jpg)
 ───────────────────────
+Use /reqscan, will request a scan to our 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 HQ.
 If you own any Bot and want to connect that Bot with our scanner, Please Join @SurveyCorpsHQ.
 """,
     reply_markup=InlineKeyboardMarkup(
