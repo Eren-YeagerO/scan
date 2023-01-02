@@ -38,14 +38,14 @@ async def _cb(c: app, cb: CallbackQuery):
 └━━
 ╒════「⚡Sudo Users Only Commands」 
 │
-├ /scan -id (id) -r (reason)  -p (proof link)
-├ /revert -id (id)
+├ /scan .id (id) .r (reason)  .p (proof link)
+├ /revert .id (id)
 ├ /gscan (reason) (To Scan Whole Group │ Members)
 ├ /grevert (To Ungban Whole Group           │ Members)
 ├ /stats
 ┖━━
 **➢Note: If You Want To Use The Scanner UserBot To Scan, Revert , Gscan or Grevert Then You Just Have To Put z Before The Command.**
-Example: /zscan -id (id) -r (reason)  -p (proof link)
+Example: /zscan .id (id) .r (reason)  .p (proof link)
 """, reply_markup=InlineKeyboardMarkup(
             [
                 [
