@@ -14,30 +14,21 @@ async def get_user_info(user, already=False):
         user = await pbot.get_users(user)
     if not user.first_name:
         return ["Deleted account", None]
-
-    gbanned, reason_gban = db.gban_user(user.id)["scanner"]
-    if gbanned:
-        gban = True
-        reason = f"The user is gbanned because {reason_gban}"
-    else:
-        gban = False
-        reason = "User is not gbanned"
-
     user_id = user.id
     username = user.username
     first_name = user.first_name
     mention = user.mention("Link")
     dc_id = user.dc_id
     photo_id = user.photo.big_file_id if user.photo else None
+    is_gbanned = db.is_user_gbanned(user_id)
     is_sudo = user_id in SUDO_USERS
     body = {
-        "🆔 User ID": user_id,
-        "🗣 Name": [first_name],
-        "🔍 Username": [("@" + username) if username else "Null"],
-        "📎 Link To Profile": [mention],
-        "💂 Protector": is_sudo,
-        "💣 Criminal": {gban},
-        "☠️ Gban reason": {reason},
+        "ID": user_id,
+        "Name": [first_name],
+        "Username": [("@" + username) if username else "Null"],
+        "Mention": [mention],
+        "Protector": is_sudo,
+        "Criminal": is_gbanned,
     }
     caption = section("User info", body)
     return [caption, photo_id]
