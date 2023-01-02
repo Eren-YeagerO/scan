@@ -117,7 +117,7 @@ async def chat_info_func(c: Gojo, message: Message):
             )
 
     m = await message.reply_text(
-        f"Fetching chat info of chat from telegram's database....."
+        f"**Fetching chat info of chat from 『Tʜᴇ Sᴜʀᴠᴇʏ Cᴏʀᴘs』 Database.....**"
     )
 
     try:
