@@ -65,12 +65,12 @@ async def reqgban(_, msg: Message):
     if user_id == owner_id:
         if bugs:
             await msg.reply_text(
-                "<b>How can the Creator of the Bot requesting a Scan???</b>",
+                "<b>How can the Creator of the Scanner request a Scan???</b>",
             )
             return
         else:
             await msg.reply_text(
-                "<b>Koi Sense hai is baat me? Use valid format pls<\b>"
+                "**Koi Sense hai is baat me? Use valid format pls**"
             )
     elif user_id != owner_id:
         if bugs:
