@@ -24,13 +24,13 @@ async def get_user_info(user, already=False):
     is_gbanned = db.is_user_gbanned(user_id)
     is_sudo = user_id in SUDO_USERS
     body = {
-        "🆔 User ID": user_id,
-        "🗣 Name": [first_name],
-        "🔅 Last Name": [last_name],
-        "🔍 Username": [("@" + username) if username else "Null"],
-        "📎 Link To Profile": [mention],
-        "👽 Protector": is_sudo,
-        "🥷 Criminal": is_gbanned,
+        "User ID": user_id,
+        "Name": [first_name],
+        "Last Name": [last_name],
+        "Username": [("@" + username) if username else "Null"],
+        "Link To Profile": [mention],
+        "Protector": is_sudo,
+        "Criminal": is_gbanned,
     }
     caption = section("User info", body)
     return [caption, photo_id]
