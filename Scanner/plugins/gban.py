@@ -92,7 +92,7 @@ async def revert(_, message: Message):
         user_id, reason, proof = extract_gban(message.text)
     except:
         try:
-            hmmm = message.text.split("-id")[1]
+            hmmm = message.text.split(".id")[1]
             user_id = int(hmmm.strip())
         except ValueError:
             await message.reply_text("id must be integer.")
