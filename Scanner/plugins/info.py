@@ -15,7 +15,6 @@ async def get_user_info(user, already=False):
     if not user.first_name:
         return ["Deleted account", None]
     user_id = user.id
-    last_name = user.last_name
     username = user.username
     first_name = user.first_name
     mention = user.mention("Link")
@@ -24,11 +23,10 @@ async def get_user_info(user, already=False):
     is_gbanned = db.is_user_gbanned(user_id)
     is_sudo = user_id in SUDO_USERS
     body = {
-        "User ID": user_id,
+        "ID": user_id,
         "Name": [first_name],
-        "Last Name": [last_name],
         "Username": [("@" + username) if username else "Null"],
-        "Link To Profile": [mention],
+        "Mention": [mention],
         "Protector": is_sudo,
         "Criminal": is_gbanned,
     }
