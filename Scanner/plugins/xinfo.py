@@ -168,56 +168,6 @@ async def chat_info(c: Gojo, chat, already=False):
     return caption, photo_id
 
 
-@Gojo.on_message(command(["info", "whois"]))
-async def info_func(c: Gojo, message: Message):
-    user, _, user_name = await extract_user(c, message)
-
-    if not user:
-        await message.reply_text("Can't find user to fetch info!")
-
-    m = await message.reply_text(
-        f"Fetching {('@' + user_name) if user_name else 'user'} info from telegram's database..."
-    )
-
-    try:
-        info_caption, photo_id = await user_info(c, user)
-
-    except Exception as e:
-        LOGGER.error(e)
-        LOGGER.error(format_exc())
-        return await m.edit(str(e))
-
-    if not photo_id:
-        await m.delete()
-        await sleep(2)
-        return await message.reply_text(info_caption, disable_web_page_preview=True)
-    photo = await c.download_media(photo_id)
-
-    await m.delete()
-    await sleep(2)
-    try:
-        await message.reply_photo(photo, caption=info_caption, quote=False)
-    except MediaCaptionTooLong:
-        x = await message.reply_photo(photo)
-        try:
-            await x.reply_text(info_caption)
-        except EntityBoundsInvalid:
-            await x.delete()
-            await message.reply_text(info_caption)
-        except RPCError as rpc:
-            await message.reply_text(rpc)
-            LOGGER.error(rpc)
-            LOGGER.error(format_exc())
-    except Exception as e:
-        await message.reply_text(text=e)
-        LOGGER.error(e)
-        LOGGER.error(format_exc())
-
-    os.remove(photo)
-
-    return
-
-
 @Gojo.on_message(command(["chinfo", "chatinfo", "chat_info"]))
 async def chat_info_func(c: Gojo, message: Message):
     splited = message.text.split()
