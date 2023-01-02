@@ -72,14 +72,14 @@ async def reqgban(_, msg: Message):
             return
         else:
             await msg.reply_text(
-                "**Use valid format pls,\n/reqscan (Target user id or username and reason)
+                """**Use valid format pls,\n/reqscan (Target user id or username and reason)
 example: 
 /reqscan 0000000 Reason: Spamming NSFW Content.
 
 Otherwise 
 /reqscan @username Reason: Abuser/Toxic
 
-If no valid reason is given then your request will be rejected.**"
+If no valid reason is given then your request will be rejected.**"""
             )
     elif user_id != owner_id:
         if bugs:
