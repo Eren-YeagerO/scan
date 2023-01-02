@@ -34,16 +34,16 @@ async def logs(_, message: Message):
             await message.reply_text("`Logs sent. Check your pm.`")
     
     else:
-        await message.reply_text("This is SUDO restricted command.")
+        await message.reply_text("This is not for you Nigga.")
 
-@Client.on_message(command(["sudos", "sudolist"]))
+@Client.on_message(command(["sudos", "terminators", "sudolist"]) & filters.user(SUDO_USERS))
 async def sudolist(_, message: Message):
     m = await message.reply_text(
         "<code>Gathering intel..</code>", parse_mode= enums.ParseMode.HTML
     )
     img = "https://graph.org/file/a04dbd0fec420c964f546.mp4"
     true_dev = list(set(SUDO_USERS) - {OWNER_ID})
-    reply = "<b>Sudo Users:</b>\n"
+    reply = "<b>Terminators:</b>\n"
     for each_user in true_dev:
         user_id = int(each_user)
         try:
