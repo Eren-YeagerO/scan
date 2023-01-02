@@ -60,7 +60,7 @@ async def user_info(c: Gojo, user, already=False):
     if not user.first_name:
         return ["Deleted account", None]
 
-    gbanned, reason_gban = db.get_gbanned_user(user.id)
+    gbanned, reason_gban = db.is_user_gbanned(user.id)
     if gbanned:
         gban = True
         reason = f"The user is gbanned because {reason_gban}"
