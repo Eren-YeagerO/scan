@@ -169,7 +169,7 @@ async def tts(_, message):
         message.reply_to_message.text or message.reply_to_message.caption
     ):
         if len(message.text.split()) == 1:
-            target_lang = "id"
+            target_lang = "en"
         else:
             target_lang = message.text.split()[1]
         text = message.reply_to_message.text or message.reply_to_message.caption
