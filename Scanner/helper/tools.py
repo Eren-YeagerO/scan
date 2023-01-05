@@ -4,7 +4,6 @@ import psutil
 import time
 import os
 from Scanner import BOT_NAME, ASS_NAME as UBOT_NAME, starttime as botStartTime
-from Scanner.plugins import ALL_MODULES
 from Scanner.helper.human_read import get_readable_time
 from Scanner.utils.http import http
 from http.cookies import SimpleCookie
@@ -49,8 +48,6 @@ BOT: {round(process.memory_info()[0] / 1024**2)} MB
 CPU: {cpu}%
 RAM: {mem}%
 DISK: {disk}%
-
-TOTAL PLUGINS: {len(ALL_MODULES)}
 """
 
 
