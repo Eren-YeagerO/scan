@@ -28,3 +28,4 @@ html5lib
 httpx
 httpx[http2]
 deep_translator
+gtts
