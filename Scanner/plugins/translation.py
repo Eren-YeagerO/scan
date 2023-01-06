@@ -1,28 +1,26 @@
-import os
-import json
-import requests
-
-from pyrogram import filters
-from gpytranslate import SyncTranslator
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
-from telegram.ext import CallbackContext
+from gpytranslate import Translator
+from telegram.ext import CommandHandler, CallbackContext
 from telegram.constants import ParseMode
+from telegram import (
+    Message,
+    Chat,
+    User,
+    Update,
+    InlineKeyboardMarkup,
+    InlineKeyboardButton,
+)
 from Scanner import pbot
+from pyrogram import filters
 
 
-trans = SyncTranslator()
+trans = Translator()
 
 
 @pbot.on_message(filters.command(["tl", "tr"]))
-async def translate(update: Update,
-                    context: CallbackContext) -> None:
-    global to_translate
-    message = update.effective_message
+async def translate(_, message: Message) -> None:
     reply_msg = message.reply_to_message
-
     if not reply_msg:
-        await update.effective_message.reply_text(
-            "Reply to a message to translate it!")
+        await message.reply_text("Reply to a message to translate it!")
         return
     if reply_msg.caption:
         to_translate = reply_msg.caption
@@ -39,15 +37,17 @@ async def translate(update: Update,
     except IndexError:
         source = await trans.detect(to_translate)
         dest = "en"
-    translation = trans(to_translate, sourcelang=source, targetlang=dest)
-    reply = (f"<b>Language: {source} -> {dest}</b>:\n\n"
-             f"Translation: <code>{translation.text}</code>")
+    translation = await trans(to_translate, sourcelang=source, targetlang=dest)
+    reply = (
+        f"<b>Translated from {source} to {dest}</b>:\n"
+        f"<code>{translation.text}</code>"
+    )
 
-    await update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
+    await message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-async def languages(update: Update) -> None:
-    await update.effective_message.reply_text(
+def languages(update: Update, context: CallbackContext) -> None:
+    update.effective_message.reply_text(
         "Click on the button below to see the list of supported language codes.",
         reply_markup=InlineKeyboardMarkup(
             [
