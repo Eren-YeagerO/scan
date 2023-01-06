@@ -1,26 +1,26 @@
-from gpytranslate import Translator
-from telegram.ext import CommandHandler, CallbackContext
-from telegram import (
-    Message,
-    Chat,
-    User,
-    Update,
-    InlineKeyboardMarkup,
-    InlineKeyboardButton,
-)
-from Scanner import pbot
-from pyrogram import filters
-from pyrogram.enums.parse_mode import ParseMode
+import os
+import json
+import requests
+
+from gpytranslate import SyncTranslator
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
+from telegram.ext import CallbackContext
+from telegram.constants import ParseMode
 
 
-trans = Translator()
+trans = SyncTranslator()
 
 
 @pbot.on_message(filters.command(["tl", "tr"]))
-async def translate(_, message: Message) -> None:
+async def translate(update: Update,
+                    context: CallbackContext) -> None:
+    global to_translate
+    message = update.effective_message
     reply_msg = message.reply_to_message
+
     if not reply_msg:
-        await message.reply_text("Reply to a message to translate it!")
+        await update.effective_message.reply_text(
+            "Reply to a message to translate it!")
         return
     if reply_msg.caption:
         to_translate = reply_msg.caption
@@ -37,17 +37,15 @@ async def translate(_, message: Message) -> None:
     except IndexError:
         source = await trans.detect(to_translate)
         dest = "en"
-    translation = await trans(to_translate, sourcelang=source, targetlang=dest)
-    reply = (
-        f"<b>Translated from {source} to {dest}</b>:\n"
-        f"<code>{translation.text}</code>"
-    )
+    translation = trans(to_translate, sourcelang=source, targetlang=dest)
+    reply = (f"<b>Language: {source} -> {dest}</b>:\n\n"
+             f"Translation: <code>{translation.text}</code>")
 
-    await message.reply_text(reply, parse_mode="html")
+    await update.effective_message.reply_text(reply, parse_mode=ParseMode.HTML)
 
 
-def languages(update: Update, context: CallbackContext) -> None:
-    update.effective_message.reply_text(
+async def languages(update: Update) -> None:
+    await update.effective_message.reply_text(
         "Click on the button below to see the list of supported language codes.",
         reply_markup=InlineKeyboardMarkup(
             [
