@@ -1,8 +1,10 @@
-from Scanner import pbot as app
+from Scanner import pbot, ubot
+from Scanner.vars import CMD_OP, SUDO_USERS
 from pyrogram import filters
 
 
-@app.on_message(filters.command("id"))
+@ubot.on_message(filters.user(SUDO_USERS) & filters.command("id", CMD_OP))
+@pbot.on_message(filters.command("id"))
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
