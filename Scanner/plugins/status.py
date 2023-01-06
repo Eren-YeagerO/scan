@@ -95,7 +95,7 @@ async def instatus(client, message):
         end_time = time.perf_counter()
         timelog = "{:.2f}".format(end_time - start_time)
         await sent_message.edit(
-            "<b>💠 {}\n👥 {} Members\n——————\n👁‍🗨 Member Status Information\n——————\n</b>🕒 <code>recently</code>: {}\n🕒 <code>last_week</code>: {}\n🕒 <code>last_month</code>: {}\n🕒 <code>long_ago</code>: {}\n🉑 No Username: {}\n🤐 Muted: {}\n🚫 Banned: {}\n👻 Deleted Account (<code>/dkick</code>): {}\n🤖 Bot: {}\n⭐️ Premium User: {}\n👽 UnCached: {}\n\n⏱ Execution time {} seconds.".format(
+            "<b>💠 {}\n👥 {} Members\n——————\n👁‍🗨 Member Status Information\n——————\n</b>🕒 <code>recently</code>: {}\n🕒 <code>last_week</code>: {}\n🕒 <code>last_month</code>: {}\n🕒 <code>long_ago</code>: {}\n🉑 No Username: {}\n🤐 Muted: {}\n🚫 Banned: {}\n👻 Deleted Account (<code>/zombies</code>): {}\n🤖 Bot: {}\n⭐️ Premium User: {}\n👽 UnCached: {}\n\n⏱ Execution time {} seconds.".format(
                 message.chat.title,
                 count,
                 recently,
@@ -113,6 +113,6 @@ async def instatus(client, message):
             )
         )
     else:
-        sent_message = await message.reply_text("❗ **Kamu harus jadi admin atau owner grup untuk melakukan tindakan ini.**")
+        sent_message = await message.reply_text("❗ **You must be an admin or group owner to perform this action.**")
         await sleep(5)
         await sent_message.delete()
