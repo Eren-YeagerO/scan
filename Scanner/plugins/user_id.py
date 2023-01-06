@@ -1,6 +1,7 @@
 from Scanner import pbot, ubot
 from Scanner.vars import CMD_OP, SUDO_USERS
 from pyrogram import filters
+from Scanner.eor import eor
 
 
 @ubot.on_message(filters.user(SUDO_USERS) & filters.command("id", CMD_OP))
@@ -32,3 +33,10 @@ async def getid(client, message):
             f"**[Replied Message ID:]({reply.link})** `{reply.message_id}`\n"
         )
         text += f"**[Replied User ID:](tg://user?id={id_})** `{id_}`"
+
+    await eor(
+        message,
+        text=text,
+        disable_web_page_preview=True,
+        parse_mode="md",
+    )
