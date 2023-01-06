@@ -43,7 +43,7 @@ async def translate(_, message: Message) -> None:
         f"<code>{translation.text}</code>"
     )
 
-    await message.reply_text(reply, parse_mode=ParseMode.HTML)
+    await message.reply_text(reply)
 
 
 def languages(update: Update, context: CallbackContext) -> None:
