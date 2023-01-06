@@ -4,13 +4,13 @@ from telegram import (
     Message,
     Chat,
     User,
-    ParseMode,
     Update,
     InlineKeyboardMarkup,
     InlineKeyboardButton,
 )
 from Scanner import pbot
 from pyrogram import filters
+from pyrogram.enums.parse_mode import ParseMode
 
 
 trans = Translator()
