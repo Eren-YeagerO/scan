@@ -1,4 +1,5 @@
 from pyrogram.types import Message
+from inspect import getfullargspec
 
 async def eor(msg: Message, **kwargs):
     func = (
