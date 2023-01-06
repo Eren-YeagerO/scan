@@ -6,6 +6,7 @@ from gpytranslate import SyncTranslator
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext
 from telegram.constants import ParseMode
+from Scanner import pbot
 
 
 trans = SyncTranslator()
