@@ -1,4 +1,4 @@
-from Scanner import pbot as app2
+from Scanner import ubot as app2
 from pyrogram import filters
 from pyrogram.types import Message
 from Scanner.vars import CMD_OP
