@@ -2,6 +2,7 @@ import os
 import json
 import requests
 
+from pyrogram import filters
 from gpytranslate import SyncTranslator
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import CallbackContext
