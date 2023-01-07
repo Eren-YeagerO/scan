@@ -1,7 +1,7 @@
 from Scanner import pbot, ubot
 from Scanner.vars import CMD_OP, SUDO_USERS
 from pyrogram import filters
-from Scanner import eor
+from Scanner.eor import eor
 
 
 @ubot.on_message(filters.user(SUDO_USERS) & filters.command("id", CMD_OP))
