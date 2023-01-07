@@ -23,7 +23,7 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.INFO)
 logging.getLogger('ptbcontrib.postgres_persistence.postgrespersistence').setLevel(logging.WARNING)
 
-LOGGER = logging.getLogger('[Scanner]')
+LOGGER = logging.getLogger('[Deku]')
 LOGGER.info("Deku is starting. | Built by unknown. | Licensed under GPLv3.")
 LOGGER.info("Handled by: github.com/unknown (t.me/anonymous)")
 
