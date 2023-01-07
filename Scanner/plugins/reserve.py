@@ -3,7 +3,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 from Scanner.vars import CMD_OP
 from Scanner.vars import SUDO_USERS
-from Scanner import eor
+from Scanner.eor import eor
 
 
 @app2.on_message(
