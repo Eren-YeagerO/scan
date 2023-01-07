@@ -9,7 +9,7 @@ from Scanner.eor import eor
 async def getid(client, message):
     chat = message.chat
     your_id = message.from_user.id
-    message_id = Message.id
+    message_id = message.id
     reply = message.reply_to_message
 
     text = f"**[Message ID:]({message.link})** `{message_id}`\n"
