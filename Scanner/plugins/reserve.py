@@ -1,9 +1,9 @@
-from Scanner import ubot as app2
+from deku import ubot as app2
 from pyrogram import filters
 from pyrogram.types import Message
 from Scanner.vars import CMD_OP
 from Scanner.vars import SUDO_USERS
-from Scanner.eor import eor
+from Scanner import eor
 
 
 @app2.on_message(
@@ -22,8 +22,8 @@ async def reserve_channel_handler(_, message: Message):
         username, "Created by .reserve command"
     )
     try:
-        await app2.update_chat_username(chat.id, username)
+        await app2.set_chat_username(chat.id, username)
     except Exception as e:
-        await m.edit(f"Couldn't Reserve, Error: `{str(e)}`")
+        await m.edit(f"Couldn't Reserve, Error: {str(e)}")
         return await app2.delete_channel(chat.id)
     await m.edit(f"Reserved @{username} Successfully")
